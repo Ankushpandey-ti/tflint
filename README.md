@@ -40,16 +40,6 @@ NOTE: The Chocolatey package is NOT directly maintained by the TFLint maintainer
 
 ### Verification
 
-GnuPG
-
-```
-gpg --import 8CE69160EB3F2FE9.key
-gpg --verify checksum.txt.sig checksum.txt
-sha256sum --ignore-missing -c checksums.txt
-```
-
-Cosign
-
 ```
 cosign verify-blob --cert checksums.txt.pem --signature checksums.txt.keyless.sig --certificate-github-workflow-repository=terraform-linters/tflint checksums.txt
 sha256sum --ignore-missing -c checksums.txt
